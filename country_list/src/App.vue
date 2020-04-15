@@ -1,9 +1,15 @@
 <template>
-  <div id="app">
+  <div id="countryContainer">
+    <header> Select a country:</header>
+    <country-select :countries="countries"></country-select>
+    <!-- <country-detail :country="selectedCountry"/> -->
   </div>
 </template>
 
 <script>
+import CountrySelect from './components/countrySelect.vue'
+import CountryDetail from './components/countryDetail.vue'
+import { eventBus } from './main.js'
 
 export default {
   name: 'App',
@@ -21,9 +27,14 @@ export default {
     eventBus.$on('country-selected', (country) => {
       this.selectedCountry = country;
     })
+  },
+  components: {
+    "country-select": CountrySelect,
+    "country-detail": CountryDetail
   }
 }
 </script>
+
 
 <style>
 #app {
