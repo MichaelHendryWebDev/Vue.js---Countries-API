@@ -1,14 +1,15 @@
 <template>
-  <div id="countryContainer">
+  <div id="country-container">
     <header> Select a country:</header>
     <country-select :countries="countries"></country-select>
-    <!-- <country-detail :country="selectedCountry"/> -->
+    <country-detail :country="selectedCountry"></country-detail>
   </div>
 </template>
 
 <script>
-import CountrySelect from './components/countrySelect.vue'
-import CountryDetail from './components/countryDetail.vue'
+import CountryDetail from './components/CountryDetail.vue'
+
+import CountrySelect from './components/CountrySelect.vue'
 import { eventBus } from './main.js'
 
 export default {
@@ -44,5 +45,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 </style>

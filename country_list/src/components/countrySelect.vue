@@ -1,21 +1,25 @@
 <template lang="html">
-<select>
-<option v-for="(country, index) in countries" v-bind:value="country" :key="index">{{country.name}}</option>
-</select>
+<div>
+  <ul>
+    <list-item v-for="(country, index) in countries" :country="country" :key="index"></list-item>
+  </ul>
+
+</div>
 </template>
 
 <script>
-import { eventBus } from '../main.js';
-import countries from '../App.vue';
 
+import ListItem from './ListItem.vue';
 export default {
-  name: 'countries-select',
+  name: 'countries-list',
   props: ['countries'],
   components: {
-    "countries": countries
+    "list-item": ListItem
   }
 }
 </script>
 
 <style lang="css" scoped>
 </style>
+
+<!-- <option v-for="(country, index) in countries" v-bind:value="country" :key="index">{{country.name}}</option> -->
