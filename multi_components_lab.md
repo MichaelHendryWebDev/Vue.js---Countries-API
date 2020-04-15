@@ -6,7 +6,7 @@
 
 - Be able to create a Vue app with multiple components and templates
 
-## Brief
+## Briefpublic
 
 Your task is to create an app that shows info for all the countries using multiple components. Use the [Countries API](https://restcountries.eu/rest/v2/all) to make a request to get the data.
 
